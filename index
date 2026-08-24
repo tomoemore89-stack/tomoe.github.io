@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tomoe Ishiguro | Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      color: #333;
+      background: #f8f8f6;
+      line-height: 1.8;
+    }
+
+    header {
+      padding: 32px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+    }
+
+    nav a {
+      margin-left: 24px;
+      color: #555;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      padding: 8% 12%;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.1;
+      font-weight: 400;
+      margin: 0 0 32px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      color: #666;
+    }
+
+    section {
+      padding: 100px 12%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 48px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .project {
+      background: white;
+      padding: 36px;
+      min-height: 220px;
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+    }
+
+    .project h3 {
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .project p {
+      color: #777;
+    }
+
+    .about {
+      max-width: 750px;
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 60px 12%;
+      border-top: 1px solid #ddd;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 24px;
+      }
+
+      nav a {
+        margin-left: 10px;
+      }
+
+      .hero {
+        padding: 80px 24px;
+      }
+
+      section {
+        padding: 70px 24px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TOMOE ISHIGURO</div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#career">Career</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+<main>
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <h1>
+        Designing connections<br>
+        between people,<br>
+        society & technology.
+      </h1>
+
+      <p>
+        地域・環境・人・テクノロジーの間にある課題を、
+        事業・サービス・ブランド・体験へと形にする。
+      </p>
+
+    </div>
+  </section>
+
+
+  <section id="about">
+
+    <h2>About</h2>
+
+    <div class="about">
+
+      <p>
+        Tomoe Ishiguro is a project designer and producer
+        working across sustainability, digital transformation,
+        branding and service design.
+      </p>
+
+      <p>
+        地域づくりやサステナビリティを起点に、
+        多様なステークホルダーをつなぎながら、
+        新しい事業・サービス・コミュニケーションを
+        企画・設計・推進してきました。
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+      <article class="project">
+        <h3>Sustainability</h3>
+        <p>
+          GHG / CDP / SBTi / TNFDなど、
+          サステナビリティ領域のプロジェクト設計・推進。
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>DX & Technology</h3>
+        <p>
+          DX推進、デジタルプロダクト開発、
+          エンジニアとの協働によるサービス設計。
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Brand & Communication</h3>
+        <p>
+          ブランド戦略、情報発信、
+          ステークホルダーとのコミュニケーション設計。
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Regional Design</h3>
+        <p>
+          地域資源・人・行政・企業をつなぐ
+          地域づくり・共創型プロジェクト。
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section id="career">
+
+    <h2>Career</h2>
+
+    <div class="about">
+
+      <p>
+        2008 — Retail / Communication
+      </p>
+
+      <p>
+        2009 — NGO / Community Development
+      </p>
+
+      <p>
+        2012 — Local Government / Regional Development
+      </p>
+
+      <p>
+        2019 — DX / Business Support
+      </p>
+
+      <p>
+        2021 — Sustainability / Digital Transformation
+      </p>
+
+      <p>
+        2023 — Sustainability Consulting / Project Management
+      </p>
+
+      <p>
+        2025 — Sustainability SaaS / Branding
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section id="contact">
+
+    <h2>Contact</h2>
+
+    <p>
+      Interested in collaboration, research or creative projects?
+    </p>
+
+    <p>
+      <a href="mailto:your-email@example.com">
+        your-email@example.com
+      </a>
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer>
+  © 2026 Tomoe Ishiguro
+</footer>
+
+</body>
+</html>
