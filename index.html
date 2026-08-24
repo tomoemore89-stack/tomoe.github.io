@@ -1,314 +1,2613 @@
+```html
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tomoe Ishiguro | Portfolio</title>
+<meta charset="UTF-8">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    body {
-      margin: 0;
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Helvetica Neue",
-        "Hiragino Kaku Gothic ProN",
-        "Yu Gothic",
-        sans-serif;
-      color: #333;
-      background: #f8f8f6;
-      line-height: 1.8;
-    }
+<title>Tomoe Ishiguro | Designer / Producer / Researcher</title>
 
-    header {
-      padding: 32px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+<meta name="description"
+      content="Tomoe Ishiguro — Designer, Producer and Researcher working across sustainability, technology, design, culture and society.">
 
-    .logo {
-      font-size: 18px;
-      letter-spacing: 0.08em;
-    }
 
-    nav a {
-      margin-left: 24px;
-      color: #555;
-      text-decoration: none;
-      font-size: 14px;
-    }
+<style>
 
-    nav a:hover {
-      opacity: 0.6;
-    }
+/* =====================================================
+   DESIGN TOKENS
+===================================================== */
 
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      padding: 8% 12%;
-    }
+:root {
 
-    .hero-inner {
-      max-width: 900px;
-    }
+  --bg: #f7f7f4;
+  --paper: #ffffff;
 
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 1.1;
-      font-weight: 400;
-      margin: 0 0 32px;
-      letter-spacing: -0.03em;
-    }
+  --text: #303432;
+  --muted: #747a77;
 
-    .hero p {
-      max-width: 650px;
-      font-size: 18px;
-      color: #666;
-    }
+  --line: #dfe2de;
 
-    section {
-      padding: 100px 12%;
-      max-width: 1200px;
-      margin: auto;
-    }
+  --accent: #62787b;
 
-    h2 {
-      font-size: 32px;
-      font-weight: 400;
-      margin-bottom: 48px;
-    }
+  --max: 1180px;
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
+}
 
-    .project {
-      background: white;
-      padding: 36px;
-      min-height: 220px;
-      transition: transform 0.3s;
-    }
 
-    .project:hover {
-      transform: translateY(-4px);
-    }
+/* =====================================================
+   RESET
+===================================================== */
 
-    .project h3 {
-      font-size: 22px;
-      font-weight: 400;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .project p {
-      color: #777;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .about {
-      max-width: 750px;
-      font-size: 18px;
-    }
+body {
 
-    footer {
-      padding: 60px 12%;
-      border-top: 1px solid #ddd;
-      color: #777;
-      font-size: 14px;
-    }
+  margin: 0;
 
-    @media (max-width: 700px) {
-      header {
-        padding: 24px;
-      }
+  background: var(--bg);
 
-      nav a {
-        margin-left: 10px;
-      }
+  color: var(--text);
 
-      .hero {
-        padding: 80px 24px;
-      }
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
 
-      section {
-        padding: 70px 24px;
-      }
+  line-height: 1.8;
+}
 
-      .projects {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+img {
+
+  width: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+.container {
+
+  width: min(var(--max), 88%);
+
+  margin: auto;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  background:
+    rgba(247,247,244,0.94);
+
+  backdrop-filter:
+    blur(12px);
+
+  border-bottom:
+    1px solid rgba(223,226,222,.7);
+
+}
+
+.header-inner {
+
+  height: 76px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+.logo {
+
+  font-size: 14px;
+
+  letter-spacing: .16em;
+
+}
+
+nav {
+
+  display: flex;
+
+  gap: 26px;
+
+}
+
+nav a {
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  letter-spacing: .04em;
+
+}
+
+nav a:hover {
+
+  color: var(--text);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding-top: 76px;
+
+}
+
+.hero-content {
+
+  max-width: 1050px;
+
+}
+
+.eyebrow {
+
+  margin-bottom: 26px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+
+  letter-spacing: .18em;
+
+  text-transform: uppercase;
+
+}
+
+.hero h1 {
+
+  margin: 0;
+
+  font-size:
+    clamp(48px, 7vw, 94px);
+
+  line-height: 1.04;
+
+  font-weight: 400;
+
+  letter-spacing: -.045em;
+
+}
+
+.hero h1 span {
+
+  color: var(--accent);
+
+}
+
+.hero-lead {
+
+  max-width: 720px;
+
+  margin-top: 42px;
+
+  color: var(--muted);
+
+  font-size: 20px;
+
+}
+
+.hero-jp {
+
+  max-width: 650px;
+
+  margin-top: 18px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+
+}
+
+.hero-links {
+
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 55px;
+
+}
+
+.hero-link {
+
+  padding: 13px 20px;
+
+  border: 1px solid var(--line);
+
+  background: var(--paper);
+
+  font-size: 12px;
+
+  letter-spacing: .1em;
+
+}
+
+.hero-link:hover {
+
+  border-color: var(--text);
+
+}
+
+.scroll {
+
+  margin-top: 70px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  letter-spacing: .16em;
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+section {
+
+  padding: 125px 0;
+
+  border-top:
+    1px solid var(--line);
+
+}
+
+.section-header {
+
+  display: grid;
+
+  grid-template-columns:
+    240px 1fr;
+
+  gap: 60px;
+
+  margin-bottom: 70px;
+
+}
+
+.section-number {
+
+  color: var(--accent);
+
+  font-size: 11px;
+
+  letter-spacing: .12em;
+
+}
+
+.section-title {
+
+  margin: 0;
+
+  font-size:
+    clamp(34px, 4vw, 54px);
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1.2fr .8fr;
+
+  gap: 100px;
+
+}
+
+.about-main {
+
+  font-size: 20px;
+
+  line-height: 1.9;
+
+}
+
+.about-main p:first-child {
+
+  margin-top: 0;
+
+}
+
+.about-side {
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+}
+
+.about-side strong {
+
+  display: block;
+
+  color: var(--text);
+
+  margin-bottom: 5px;
+
+}
+
+
+/* =====================================================
+   CATEGORY INTRO
+===================================================== */
+
+.category-intro {
+
+  max-width: 720px;
+
+  margin-bottom: 55px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+}
+
+
+/* =====================================================
+   EXPERTISE
+===================================================== */
+
+.expertise-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 1px;
+
+  background: var(--line);
+
+}
+
+.expertise-card {
+
+  min-height: 260px;
+
+  padding: 40px;
+
+  background: var(--paper);
+
+}
+
+.expertise-number {
+
+  color: var(--accent);
+
+  font-size: 11px;
+
+}
+
+.expertise-card h3 {
+
+  margin:
+    25px 0 14px;
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+}
+
+.expertise-card p {
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+}
+
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
+.project-list {
+
+  display: grid;
+
+  gap: 1px;
+
+  background: var(--line);
+
+}
+
+.project {
+
+  display: grid;
+
+  grid-template-columns:
+    70px 1fr 1.1fr;
+
+  gap: 35px;
+
+  padding: 42px;
+
+  background: var(--paper);
+
+  transition:
+    transform .25s ease;
+
+}
+
+.project:hover {
+
+  transform:
+    translateX(5px);
+
+}
+
+.project-number {
+
+  color: var(--accent);
+
+  font-size: 12px;
+
+}
+
+.project h3 {
+
+  margin: 0 0 7px;
+
+  font-size: 23px;
+
+  font-weight: 400;
+
+}
+
+.project-company {
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+}
+
+.project-description {
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+}
+
+
+/* =====================================================
+   WORKS / PERSONAL GALLERY
+===================================================== */
+
+.gallery {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 28px;
+
+}
+
+.work-card {
+
+  background: var(--paper);
+
+  overflow: hidden;
+
+}
+
+.work-image {
+
+  aspect-ratio: 4 / 3;
+
+  background: #e9ece8;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  letter-spacing: .1em;
+
+}
+
+/*
+   Replace the placeholder above with:
+
+   <img src="images/work-01.jpg"
+        alt="Description">
+*/
+
+.work-info {
+
+  padding: 24px 25px 28px;
+
+}
+
+.work-category {
+
+  color: var(--accent);
+
+  font-size: 10px;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+}
+
+.work-card h3 {
+
+  margin:
+    10px 0 8px;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+}
+
+.work-card p {
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+}
+
+
+/* =====================================================
+   MEDIA
+===================================================== */
+
+.media-list {
+
+  border-top:
+    1px solid var(--line);
+
+}
+
+.media-item {
+
+  display: grid;
+
+  grid-template-columns:
+    120px 130px 1fr 30px;
+
+  gap: 30px;
+
+  align-items: center;
+
+  padding: 28px 0;
+
+  border-bottom:
+    1px solid var(--line);
+
+}
+
+.media-date {
+
+  color: var(--accent);
+
+  font-size: 12px;
+
+}
+
+.media-type {
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+}
+
+.media-title {
+
+  font-size: 17px;
+
+}
+
+.media-arrow {
+
+  color: var(--muted);
+
+}
+
+
+/* =====================================================
+   CAREER
+===================================================== */
+
+.timeline {
+
+  border-top:
+    1px solid var(--line);
+
+}
+
+.timeline-item {
+
+  display: grid;
+
+  grid-template-columns:
+    190px 1fr 2fr;
+
+  padding: 30px 0;
+
+  border-bottom:
+    1px solid var(--line);
+
+}
+
+.timeline-date {
+
+  color: var(--accent);
+
+  font-size: 12px;
+
+}
+
+.timeline-company {
+
+  font-size: 17px;
+
+}
+
+.timeline-role {
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 60px;
+
+}
+
+.skill-group {
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid var(--line);
+
+}
+
+.skill-group h3 {
+
+  margin:
+    0 0 16px;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+}
+
+.skill-group p {
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+}
+
+
+/* =====================================================
+   PHILOSOPHY
+===================================================== */
+
+.philosophy {
+
+  max-width: 900px;
+
+}
+
+.philosophy blockquote {
+
+  margin: 0;
+
+  font-size:
+    clamp(30px, 4vw, 52px);
+
+  line-height: 1.35;
+
+  font-weight: 300;
+
+}
+
+.philosophy p {
+
+  max-width: 680px;
+
+  margin-top: 40px;
+
+  color: var(--muted);
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+
+  min-height: 70vh;
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+.contact h2 {
+
+  margin: 0;
+
+  font-size:
+    clamp(48px, 7vw, 90px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+}
+
+.contact p {
+
+  max-width: 600px;
+
+  margin:
+    35px 0;
+
+  color: var(--muted);
+
+}
+
+.contact-link {
+
+  display: inline-block;
+
+  padding-bottom: 6px;
+
+  border-bottom:
+    1px solid var(--text);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+  padding: 40px 0;
+
+  border-top:
+    1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  nav {
+    display: none;
+  }
+
+  section {
+    padding: 90px 0;
+  }
+
+  .section-header {
+    display: block;
+    margin-bottom: 45px;
+  }
+
+  .section-number {
+    margin-bottom: 15px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .media-item {
+    grid-template-columns:
+      80px 1fr 20px;
+  }
+
+  .media-type {
+    display: none;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-links {
+    flex-wrap: wrap;
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
-  <div class="logo">TOMOE ISHIGURO</div>
+
+<div class="container header-inner">
+
+  <a href="#" class="logo">
+    TOMOE ISHIGURO
+  </a>
 
   <nav>
+
     <a href="#about">About</a>
+
     <a href="#projects">Projects</a>
+
+    <a href="#works">Works</a>
+
+    <a href="#personal">Personal</a>
+
+    <a href="#media">Media</a>
+
     <a href="#career">Career</a>
+
     <a href="#contact">Contact</a>
+
   </nav>
+
+</div>
+
 </header>
 
 
 <main>
 
-  <section class="hero">
-    <div class="hero-inner">
 
-      <h1>
-        Designing connections<br>
-        between people,<br>
-        society & technology.
-      </h1>
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+  <div class="eyebrow">
+    Designer / Producer / Researcher
+  </div>
+
+  <h1>
+
+    Designing connections<br>
+
+    across
+    <span>
+      society,
+    </span><br>
+
+    technology & nature.
+
+  </h1>
+
+
+  <p class="hero-lead">
+
+    Connecting people, ideas and technology
+    to shape projects, services and new ways of living.
+
+  </p>
+
+
+  <p class="hero-jp">
+
+    地域・環境・人・テクノロジーの間にある課題を、
+    事業・サービス・ブランド・体験へと形にする。
+
+  </p>
+
+
+  <div class="hero-links">
+
+    <a href="#projects"
+       class="hero-link">
+       WORK
+    </a>
+
+    <a href="#works"
+       class="hero-link">
+       MAKE
+    </a>
+
+    <a href="#media"
+       class="hero-link">
+       WRITE
+    </a>
+
+  </div>
+
+
+  <div class="scroll">
+    SCROLL TO EXPLORE ↓
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      01 / ABOUT
+    </div>
+
+    <h2 class="section-title">
+      Connecting disciplines<br>
+      to create possibilities.
+    </h2>
+
+  </div>
+
+
+  <div class="about-grid">
+
+    <div class="about-main">
 
       <p>
-        地域・環境・人・テクノロジーの間にある課題を、
-        事業・サービス・ブランド・体験へと形にする。
+        I work across sustainability,
+        digital transformation,
+        branding, service design
+        and regional development.
       </p>
 
-    </div>
-  </section>
-
-
-  <section id="about">
-
-    <h2>About</h2>
-
-    <div class="about">
-
       <p>
-        Tomoe Ishiguro is a project designer and producer
-        working across sustainability, digital transformation,
-        branding and service design.
+        My strength is working between disciplines —
+        connecting business, technology, design,
+        communication and people to move projects
+        from ideas to implementation.
       </p>
 
       <p>
         地域づくりやサステナビリティを起点に、
-        多様なステークホルダーをつなぎながら、
-        新しい事業・サービス・コミュニケーションを
-        企画・設計・推進してきました。
+        行政・企業・地域・専門家など
+        多様な関係者をつなぎながら、
+        プロジェクトを企画・設計・推進してきました。
       </p>
 
     </div>
 
-  </section>
+
+    <div class="about-side">
+
+      <strong>Based in</strong>
+
+      Tokyo, Japan
+
+      <br><br>
 
 
-  <section id="projects">
+      <strong>Focus</strong>
 
-    <h2>Projects</h2>
+      Sustainability<br>
+      Design<br>
+      Technology<br>
+      Community
 
-    <div class="projects">
+      <br><br>
 
-      <article class="project">
-        <h3>Sustainability</h3>
-        <p>
-          GHG / CDP / SBTi / TNFDなど、
-          サステナビリティ領域のプロジェクト設計・推進。
-        </p>
-      </article>
 
-      <article class="project">
-        <h3>DX & Technology</h3>
-        <p>
-          DX推進、デジタルプロダクト開発、
-          エンジニアとの協働によるサービス設計。
-        </p>
-      </article>
+      <strong>Languages</strong>
 
-      <article class="project">
-        <h3>Brand & Communication</h3>
-        <p>
-          ブランド戦略、情報発信、
-          ステークホルダーとのコミュニケーション設計。
-        </p>
-      </article>
-
-      <article class="project">
-        <h3>Regional Design</h3>
-        <p>
-          地域資源・人・行政・企業をつなぐ
-          地域づくり・共創型プロジェクト。
-        </p>
-      </article>
+      Japanese / English
 
     </div>
 
-  </section>
+  </div>
+
+</div>
+
+</section>
 
 
-  <section id="career">
+<!-- =====================================================
+     EXPERTISE
+===================================================== -->
 
-    <h2>Career</h2>
+<section id="expertise">
 
-    <div class="about">
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      02 / EXPERTISE
+    </div>
+
+    <h2 class="section-title">
+      A cross-disciplinary<br>
+      approach.
+    </h2>
+
+  </div>
+
+
+  <div class="expertise-grid">
+
+
+    <article class="expertise-card">
+
+      <div class="expertise-number">
+        01
+      </div>
+
+      <h3>
+        Project Design
+      </h3>
 
       <p>
-        2008 — Retail / Communication
+        Defining objectives, structuring projects,
+        designing processes and connecting people
+        and expertise.
       </p>
 
-      <p>
-        2009 — NGO / Community Development
-      </p>
+    </article>
+
+
+    <article class="expertise-card">
+
+      <div class="expertise-number">
+        02
+      </div>
+
+      <h3>
+        Project Management
+      </h3>
 
       <p>
-        2012 — Local Government / Regional Development
+        Coordinating stakeholders, schedules,
+        budgets and deliverables while maintaining
+        the overall direction.
       </p>
 
-      <p>
-        2019 — DX / Business Support
-      </p>
+    </article>
+
+
+    <article class="expertise-card">
+
+      <div class="expertise-number">
+        03
+      </div>
+
+      <h3>
+        Sustainability
+      </h3>
 
       <p>
-        2021 — Sustainability / Digital Transformation
+        GHG Scope 1–3, LCA, CDP, SBTi,
+        TCFD, ISSB and TNFD.
       </p>
 
-      <p>
-        2023 — Sustainability Consulting / Project Management
-      </p>
+    </article>
+
+
+    <article class="expertise-card">
+
+      <div class="expertise-number">
+        04
+      </div>
+
+      <h3>
+        DX / UX
+      </h3>
 
       <p>
-        2025 — Sustainability SaaS / Branding
+        Bridging business and technology teams
+        to design digital services and workflows.
+      </p>
+
+    </article>
+
+
+    <article class="expertise-card">
+
+      <div class="expertise-number">
+        05
+      </div>
+
+      <h3>
+        Brand & Communication
+      </h3>
+
+      <p>
+        Translating ideas and organizational value
+        into narratives, content and experiences.
+      </p>
+
+    </article>
+
+
+    <article class="expertise-card">
+
+      <div class="expertise-number">
+        06
+      </div>
+
+      <h3>
+        Regional Design
+      </h3>
+
+      <p>
+        Connecting local resources, communities,
+        governments and businesses.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      03 / PROJECTS
+    </div>
+
+    <h2 class="section-title">
+      Work that connects<br>
+      strategy and implementation.
+    </h2>
+
+  </div>
+
+
+  <p class="category-intro">
+
+    Selected professional projects across
+    sustainability, regional development,
+    digital transformation, branding and
+    project management.
+
+  </p>
+
+
+  <div class="project-list">
+
+
+    <article class="project">
+
+      <div class="project-number">
+        01
+      </div>
+
+      <div>
+
+        <h3>
+          Sustainability Consulting
+        </h3>
+
+        <div class="project-company">
+          Bright Innovation
+        </div>
+
+      </div>
+
+      <p class="project-description">
+
+        Managed approximately 12 clients
+        and 45 projects across sustainability
+        consulting, CDP submissions,
+        climate strategy and related initiatives.
+
+      </p>
+
+    </article>
+
+
+    <article class="project">
+
+      <div class="project-number">
+        02
+      </div>
+
+      <div>
+
+        <h3>
+          CSV / Project Management
+        </h3>
+
+        <div class="project-company">
+          Members
+        </div>
+
+      </div>
+
+      <p class="project-description">
+
+        Project leadership and coordination
+        across CSV, sustainability and
+        digital-related initiatives,
+        working with clients and multidisciplinary teams.
+
+      </p>
+
+    </article>
+
+
+    <article class="project">
+
+      <div class="project-number">
+        03
+      </div>
+
+      <div>
+
+        <h3>
+          Sustainability SaaS / AI
+        </h3>
+
+        <div class="project-company">
+          Unravel Carbon
+        </div>
+
+      </div>
+
+      <p class="project-description">
+
+        Experience connecting sustainability
+        knowledge with digital product development,
+        SaaS and AI-oriented business needs.
+
+      </p>
+
+    </article>
+
+
+    <article class="project">
+
+      <div class="project-number">
+        04
+      </div>
+
+      <div>
+
+        <h3>
+          Regional Development
+        </h3>
+
+        <div class="project-company">
+          Yoshika Town, Shimane
+        </div>
+
+      </div>
+
+      <p class="project-description">
+
+        Planning and community-oriented projects
+        connecting administration, residents,
+        local resources and external stakeholders.
+
+      </p>
+
+    </article>
+
+
+    <article class="project">
+
+      <div class="project-number">
+        05
+      </div>
+
+      <div>
+
+        <h3>
+          Branding & Communication
+        </h3>
+
+        <div class="project-company">
+          Corporate / Regional Projects
+        </div>
+
+      </div>
+
+      <p class="project-description">
+
+        Brand narratives, communication concepts,
+        content planning and information design
+        for complex social and organizational themes.
+
+      </p>
+
+    </article>
+
+
+    <article class="project">
+
+      <div class="project-number">
+        06
+      </div>
+
+      <div>
+
+        <h3>
+          DX Transformation
+        </h3>
+
+        <div class="project-company">
+          Multiple Organizations
+        </div>
+
+      </div>
+
+      <p class="project-description">
+
+        Supported organizations transitioning
+        from paper-based processes toward
+        digital workflows, data use and
+        improved ways of working.
+
+      </p>
+
+    </article>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WORKS
+===================================================== -->
+
+<section id="works">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      04 / WORKS
+    </div>
+
+    <h2 class="section-title">
+      Things I have<br>
+      designed and made.
+    </h2>
+
+  </div>
+
+
+  <p class="category-intro">
+
+    Selected professional design and creative works.
+    Replace the placeholders below with images,
+    links or case studies.
+
+  </p>
+
+
+  <div class="gallery">
+
+
+    <!-- WORK 01 -->
+
+    <article class="work-card">
+
+      <div class="work-image">
+
+        <span>
+          IMAGE / 01
+        </span>
+
+        <!--
+        <img
+          src="images/work-01.jpg"
+          alt="Project description">
+        -->
+
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Graphic Design
+        </div>
+
+        <h3>
+          Brand / Visual Communication
+        </h3>
+
+        <p>
+          Visual design, communication materials
+          and information design.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- WORK 02 -->
+
+    <article class="work-card">
+
+      <div class="work-image">
+
+        <span>
+          IMAGE / 02
+        </span>
+
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Illustration
+        </div>
+
+        <h3>
+          Illustration / Drawing
+        </h3>
+
+        <p>
+          Illustrations and visual explorations.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- WORK 03 -->
+
+    <article class="work-card">
+
+      <div class="work-image">
+
+        <span>
+          IMAGE / 03
+        </span>
+
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Digital
+        </div>
+
+        <h3>
+          Web / UX / Digital
+        </h3>
+
+        <p>
+          Digital experiences, websites and
+          interface-related work.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- WORK 04 -->
+
+    <article class="work-card">
+
+      <div class="work-image">
+
+        <span>
+          IMAGE / 04
+        </span>
+
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Communication
+        </div>
+
+        <h3>
+          Editorial / Information Design
+        </h3>
+
+        <p>
+          Reports, editorial materials and
+          communication design.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- WORK 05 -->
+
+    <article class="work-card">
+
+      <div class="work-image">
+
+        <span>
+          IMAGE / 05
+        </span>
+
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Space
+        </div>
+
+        <h3>
+          Space / Exhibition
+        </h3>
+
+        <p>
+          Spatial concepts, environments and
+          exhibition-related design.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- WORK 06 -->
+
+    <article class="work-card">
+
+      <div class="work-image">
+
+        <span>
+          IMAGE / 06
+        </span>
+
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Other
+        </div>
+
+        <h3>
+          Other Creative Works
+        </h3>
+
+        <p>
+          Selected visual and creative projects.
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PERSONAL WORKS
+===================================================== -->
+
+<section id="personal">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      05 / PERSONAL
+    </div>
+
+    <h2 class="section-title">
+      Researching,<br>
+      making, exploring.
+    </h2>
+
+  </div>
+
+
+  <p class="category-intro">
+
+    Personal projects are a space for curiosity,
+    material research and creative exploration
+    beyond client work.
+
+  </p>
+
+
+  <div class="gallery">
+
+
+    <article class="work-card">
+
+      <div class="work-image">
+        <span>
+          IMAGE / PERSONAL 01
+        </span>
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Material Research
+        </div>
+
+        <h3>
+          Materials & Nature
+        </h3>
+
+        <p>
+          Exploring natural materials,
+          textures and their relationship
+          with everyday life.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="work-card">
+
+      <div class="work-image">
+        <span>
+          IMAGE / PERSONAL 02
+        </span>
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Textile
+        </div>
+
+        <h3>
+          Indigo / Textile
+        </h3>
+
+        <p>
+          Indigo, fabric, pattern and
+          material-based making.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="work-card">
+
+      <div class="work-image">
+        <span>
+          IMAGE / PERSONAL 03
+        </span>
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Drawing
+        </div>
+
+        <h3>
+          Drawing / Illustration
+        </h3>
+
+        <p>
+          Personal visual studies and
+          everyday observations.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="work-card">
+
+      <div class="work-image">
+        <span>
+          IMAGE / PERSONAL 04
+        </span>
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Space
+        </div>
+
+        <h3>
+          Space & Wellbeing
+        </h3>
+
+        <p>
+          Exploring relationships between
+          space, materials, plants and wellbeing.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="work-card">
+
+      <div class="work-image">
+        <span>
+          IMAGE / PERSONAL 05
+        </span>
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Objects
+        </div>
+
+        <h3>
+          Objects & Craft
+        </h3>
+
+        <p>
+          Kintsugi, handmade objects and
+          small-scale creative experiments.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="work-card">
+
+      <div class="work-image">
+        <span>
+          IMAGE / PERSONAL 06
+        </span>
+      </div>
+
+      <div class="work-info">
+
+        <div class="work-category">
+          Future Research
+        </div>
+
+        <h3>
+          Future Explorations
+        </h3>
+
+        <p>
+          Early-stage ideas, prototypes and
+          research notes.
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MEDIA
+===================================================== -->
+
+<section id="media">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      06 / MEDIA
+    </div>
+
+    <h2 class="section-title">
+      Writing,<br>
+      publications & appearances.
+    </h2>
+
+  </div>
+
+
+  <p class="category-intro">
+
+    Articles, contributions, interviews,
+    publications, talks and other appearances.
+
+  </p>
+
+
+  <div class="media-list">
+
+
+    <!-- MEDIA 01 -->
+
+    <a href="#"
+       class="media-item">
+
+      <div class="media-date">
+        2026
+      </div>
+
+      <div class="media-type">
+        Article
+      </div>
+
+      <div class="media-title">
+        Article / contribution title
+      </div>
+
+      <div class="media-arrow">
+        →
+      </div>
+
+    </a>
+
+
+    <!-- MEDIA 02 -->
+
+    <a href="#"
+       class="media-item">
+
+      <div class="media-date">
+        2025
+      </div>
+
+      <div class="media-type">
+        Interview
+      </div>
+
+      <div class="media-title">
+        Interview / publication title
+      </div>
+
+      <div class="media-arrow">
+        →
+      </div>
+
+    </a>
+
+
+    <!-- MEDIA 03 -->
+
+    <a href="#"
+       class="media-item">
+
+      <div class="media-date">
+        2024
+      </div>
+
+      <div class="media-type">
+        Column
+      </div>
+
+      <div class="media-title">
+        Column / essay title
+      </div>
+
+      <div class="media-arrow">
+        →
+      </div>
+
+    </a>
+
+
+    <!-- MEDIA 04 -->
+
+    <a href="#"
+       class="media-item">
+
+      <div class="media-date">
+        2023
+      </div>
+
+      <div class="media-type">
+        Publication
+      </div>
+
+      <div class="media-title">
+        Publication / media appearance
+      </div>
+
+      <div class="media-arrow">
+        →
+      </div>
+
+    </a>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CAREER
+===================================================== -->
+
+<section id="career">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      07 / CAREER
+    </div>
+
+    <h2 class="section-title">
+      A career built<br>
+      across boundaries.
+    </h2>
+
+  </div>
+
+
+  <div class="timeline">
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2025.06 — 2025.09
+      </div>
+
+      <div class="timeline-company">
+        Unravel Carbon
+      </div>
+
+      <div class="timeline-role">
+        Sustainability SaaS / AI
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2023.11 — 2025.01
+      </div>
+
+      <div class="timeline-company">
+        Bright Innovation
+      </div>
+
+      <div class="timeline-role">
+        Sustainability Consulting /
+        CDP / GHG / Climate Strategy /
+        Project Management
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2023.03 — 2023.10
+      </div>
+
+      <div class="timeline-company">
+        Members
+      </div>
+
+      <div class="timeline-role">
+        CSV Division /
+        Project Leader & Project Manager
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2021.06 — 2021.11
+      </div>
+
+      <div class="timeline-company">
+        Tokyo Chuo Tatemono
+      </div>
+
+      <div class="timeline-role">
+        CEO Office / DX & Business Support
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2019.04 — 2021.03
+      </div>
+
+      <div class="timeline-company">
+        Nissin
+      </div>
+
+      <div class="timeline-role">
+        International Logistics /
+        Business Administration
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2017.04 — 2017.09
+      </div>
+
+      <div class="timeline-company">
+        Yoshika Town, Shimane
+      </div>
+
+      <div class="timeline-role">
+        Local Government / Planning
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2012.07 — 2016.09
+      </div>
+
+      <div class="timeline-company">
+        Yoshika Town, Shimane
+      </div>
+
+      <div class="timeline-role">
+        Planning Division /
+        Regional Development
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2009.04 — 2012.05
+      </div>
+
+      <div class="timeline-company">
+        NICE
+      </div>
+
+      <div class="timeline-role">
+        NGO / International &
+        Community Projects
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">
+        2008.04 — 2009.03
+      </div>
+
+      <div class="timeline-company">
+        Marui Group
+      </div>
+
+      <div class="timeline-role">
+        Retail / Customer Communication
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      08 / SKILLS
+    </div>
+
+    <h2 class="section-title">
+      Tools, knowledge<br>
+      and methods.
+    </h2>
+
+  </div>
+
+
+  <div class="skills">
+
+
+    <div class="skill-group">
+
+      <h3>
+        Sustainability
+      </h3>
+
+      <p>
+        GHG Scope 1–3 / LCA / CDP /
+        SBTi / TCFD / ISSB / TNFD
       </p>
 
     </div>
 
-  </section>
+
+    <div class="skill-group">
+
+      <h3>
+        Digital / Data
+      </h3>
+
+      <p>
+        Google Analytics / Search Console /
+        WordPress / Power BI / Snowflake /
+        Salesforce / Notion / Miro
+      </p>
+
+    </div>
 
 
-  <section id="contact">
+    <div class="skill-group">
 
-    <h2>Contact</h2>
+      <h3>
+        Design
+      </h3>
+
+      <p>
+        Adobe Illustrator / Photoshop /
+        InDesign / Vectorworks /
+        Information Design / Service Design
+      </p>
+
+    </div>
+
+
+    <div class="skill-group">
+
+      <h3>
+        Project Management
+      </h3>
+
+      <p>
+        Project Design / PM / PMO /
+        Stakeholder Coordination /
+        Budget / Schedule / Team Coordination
+      </p>
+
+    </div>
+
+
+    <div class="skill-group">
+
+      <h3>
+        Communication
+      </h3>
+
+      <p>
+        Writing / Editing /
+        Brand Communication /
+        Research / Content Planning /
+        Facilitation
+      </p>
+
+    </div>
+
+
+    <div class="skill-group">
+
+      <h3>
+        Certifications
+      </h3>
+
+      <p>
+        Google Analytics Certification /
+        LCAF Intermediate / TOEIC 725
+      </p>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     APPROACH
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      09 / APPROACH
+    </div>
+
+    <h2 class="section-title">
+      How I work.
+    </h2>
+
+  </div>
+
+
+  <div class="philosophy">
+
+    <blockquote>
+
+      “The most interesting ideas often emerge
+      between disciplines.”
+
+    </blockquote>
+
 
     <p>
-      Interested in collaboration, research or creative projects?
+
+      I enjoy working at the intersection of different
+      perspectives — where business meets design,
+      sustainability meets technology, and local
+      knowledge meets global ideas.
+
     </p>
+
 
     <p>
-      <a href="mailto:your-email@example.com">
-        your-email@example.com
-      </a>
+
+      Rather than solving problems from a single
+      discipline, I focus on creating the connections
+      that allow people and ideas to move forward together.
+
     </p>
 
-  </section>
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPLORATION
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-number">
+      10 / EXPLORATION
+    </div>
+
+    <h2 class="section-title">
+      What comes next.
+    </h2>
+
+  </div>
+
+
+  <div class="about-grid">
+
+
+    <div class="about-main">
+
+      <p>
+
+        My next area of exploration is the relationship
+        between materials, places, wellbeing and everyday life.
+
+      </p>
+
+
+      <p>
+
+        I am interested in how local materials,
+        natural resources, spaces and creative practices
+        can become new forms of value.
+
+      </p>
+
+
+      <p>
+
+        From research and concept development to
+        prototyping and communication, I want to continue
+        exploring the space between sustainability
+        and creativity.
+
+      </p>
+
+    </div>
+
+
+    <div class="about-side">
+
+      <strong>
+        Exploring
+      </strong>
+
+      Material Research<br>
+
+      Regional Resources<br>
+
+      Space & Wellbeing<br>
+
+      Creative Making<br>
+
+      Service & Product Design
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact"
+         class="contact">
+
+<div class="container">
+
+  <div class="eyebrow">
+    CONTACT
+  </div>
+
+
+  <h2>
+
+    Let's create<br>
+    something meaningful.
+
+  </h2>
+
+
+  <p>
+
+    I am interested in collaborations and projects
+    across sustainability, design, technology,
+    communication and community.
+
+  </p>
+
+
+  <!-- Replace with your email -->
+
+  <a
+    class="contact-link"
+    href="mailto:your-email@example.com">
+
+    your-email@example.com →
+
+  </a>
+
+
+</div>
+
+</section>
+
 
 </main>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
+
+<div class="container">
+
   © 2026 Tomoe Ishiguro
+
+</div>
+
 </footer>
 
+
 </body>
+
 </html>
+```
